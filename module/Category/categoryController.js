@@ -73,3 +73,5 @@ router.post("/category/delete",(req,res) => {
         });
     }
 })
+
+module.exports = router
