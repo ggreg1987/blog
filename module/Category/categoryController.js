@@ -39,3 +39,22 @@ router.post("/admin/categories/edit/:id",(req,res) => {
         res.redirect("/admin/categories")
     }
 })
+
+router.post("/category/update", (req,res) => {
+    let id = req.body.id;
+    let title = req.body.title;
+
+    if(title != undefined) {
+        Categories.update({
+            title : title,
+            slug : slugify(title)
+        },
+        {
+            where : {id : id}
+        }).then(() => {
+            res.redirect("/admin/categories")
+        })
+    } else {
+        res.redirect("/admin/categories/edit")
+    }
+})
