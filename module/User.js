@@ -13,3 +13,4 @@ const User = connection.define("user",{
     }
 })
 
+module.exports = User
