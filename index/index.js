@@ -10,7 +10,7 @@ connection
     .then(() => {
         console.log("Conexão com o banco realizada com sucesso!")
     }).catch((err) => {
-        console.log(`Erro ao conectar-se com o banco: #{err}`)
+        console.log(`Erro ao conectar-se com o banco: ${err}`)
     });
 
 app.set('view engine','ejs');
