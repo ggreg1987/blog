@@ -5,6 +5,7 @@ const session = require('express-session');
 const connection = require('../database/database');
 const User = require('../module/User/User');
 const userController = require('../module/User/userController');
+const Categories = require('../module/Category/Categories');
 
 connection
     .authenticate()
