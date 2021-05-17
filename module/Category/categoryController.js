@@ -58,3 +58,18 @@ router.post("/category/update", (req,res) => {
         res.redirect("/admin/categories/edit")
     }
 })
+
+router.post("/category/delete",(req,res) => {
+    let id = req.body.id;
+    if(id != undefined && !isNaN(id)) {
+        Categories.destroy({
+            where : {
+                id : id
+            }
+        }).then(() => {
+            res.redirect("/admin/categories")
+        }).catch((err) => {
+            res.redirect("/admin/categories")
+        });
+    }
+})
