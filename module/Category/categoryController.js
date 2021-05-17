@@ -10,3 +10,7 @@ router.get("/admin/categories",(req,res) => {
         })
     })
 })
+
+router.get("/admin/categories/new",(req,res) => {
+    res.render("admin/categories/new")
+})
