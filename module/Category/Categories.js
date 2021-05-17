@@ -14,7 +14,7 @@ const Categories = connection.define("categories", {
 })
 
 Categories
-    .sync({force:true})
+    .sync({force:false})
     .then(() => {
         console.log("Categoria criada com sucesso")
     }).catch((err) => {
