@@ -53,3 +53,5 @@ router.post("/authenticate",(req,res) => {
         }
     })
 })
+
+module.exports = router;
