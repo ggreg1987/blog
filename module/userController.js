@@ -30,3 +30,26 @@ router.post("/usersave", (req,res) => {
         }
     })
 })
+
+router.post("/authenticate",(req,res) => {
+    let username = req.body.username;
+    let password = req.body.password;
+
+    User.findOne({where: {username : username}}).then(user => {
+        if(user != undefined) {
+    
+            let correctPassword = bcrypt.compareSync(password, user.password);
+
+            if(correctPassword) {
+                req.session.user = {
+                    id : user.id,
+                    username : user.username
+                }
+            } else {
+                res.redirect("/login")
+            }
+        } else {
+            res.redirect("/login")
+        }
+    })
+})
