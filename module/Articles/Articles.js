@@ -17,3 +17,6 @@ const Articles = connection.define("articles",{
     }
 })
 
+Categories.hasMany(Articles);
+Articles.belongsTo(Categories);
+
