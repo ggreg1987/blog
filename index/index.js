@@ -7,6 +7,7 @@ const User = require('../module/User/User');
 const userController = require('../module/User/userController');
 const Categories = require('../module/Category/Categories');
 const categoriesController = require('../module/Category/categoryController');
+const Articles = require('../module/Articles/Articles');
 
 connection
     .authenticate()
