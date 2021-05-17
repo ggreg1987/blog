@@ -18,18 +18,15 @@ router.post("/usersave", (req,res) => {
 
             let salt = bcrypt.genSaltSync(10);
             let hash = bcrypt.hashSync(password,salt);
-            let correctPassword = bcrypt.compareSync(user.password,hash)
-
-            if(correctPassword) {
+                      
                 User.create({
                     username : username,
                     password : hash
                 }).then(() => {
                     res.redirect("/admin/category")
-                })
-            } else {
-                res.redirect("/amin/user/create")
-            }
+                }).catch((err) => {
+                    res.redirect("/login")
+                })            
         }
     })
 })
