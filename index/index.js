@@ -18,6 +18,7 @@ app.set('view engine','ejs');
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(session({secret:"hardSecrety", cookie : {maxAge : 36000000}}))
+app.use("/",userController)
 
 
 app.listen(9090,() => {
