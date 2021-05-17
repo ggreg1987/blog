@@ -19,4 +19,6 @@ Categories
         console.log("Categoria criada com sucesso")
     }).catch((err) => {
         console.log(`Erro ao criar a tabela Categories  ${err}`)
-    });
+});
+
+module.exports = Categories;
