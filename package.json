@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ggreg1987/blog/issues"
   },
-  "homepage": "https://github.com/ggreg1987/blog#readme"
+  "homepage": "https://github.com/ggreg1987/blog#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
