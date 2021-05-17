@@ -24,6 +24,7 @@
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2",
+    "slugify": "^1.5.3",
     "tinymce": "^5.8.0"
   }
 }
