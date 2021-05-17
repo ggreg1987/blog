@@ -20,3 +20,11 @@ const Articles = connection.define("articles",{
 Categories.hasMany(Articles);
 Articles.belongsTo(Categories);
 
+Articles.sync({force:true})
+    .then(() => {
+        console.log("Articles criado com sucesso")   
+    }).catch((err) => {
+        console.log(`Erro ao criar articles: ${err}`)
+    });
+    
+module.exports = Articles
