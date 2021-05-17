@@ -26,3 +26,16 @@ router.post("/category/save",(req,res) => {
         })
     }
 })
+
+router.post("/admin/categories/edit/:id",(req,res) => {
+    let id = req.params.id;
+    if(id != undefined && !isNaN(id)) {
+        Categories.findByPk(id).then(categories => {
+            res.render("admin/categories/edit",{
+                categories : categories
+            })
+        })
+    } else {
+        res.redirect("/admin/categories")
+    }
+})
