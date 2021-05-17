@@ -14,3 +14,15 @@ router.get("/admin/categories",(req,res) => {
 router.get("/admin/categories/new",(req,res) => {
     res.render("admin/categories/new")
 })
+
+router.post("/category/save",(req,res) => {
+    let title = req.body.title;
+    if(title != undefined) {
+        Categories.create({
+            title : title,
+            slug : slugify(title)
+        }).then(() => {
+            res.redirect("/admin/categories")
+        })
+    }
+})
