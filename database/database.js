@@ -4,3 +4,5 @@ const connection = new Sequelize("blog","greg","12345", {
     dialect : "mysql",
     timezone : "-03:00"
 });
+
+module.exports = connection
