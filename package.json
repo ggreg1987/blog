@@ -1,0 +1,19 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "blog para consolidar os estudos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ggreg1987/blog.git"
+  },
+  "author": "Gabriel Gregorio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ggreg1987/blog/issues"
+  },
+  "homepage": "https://github.com/ggreg1987/blog#readme"
+}
