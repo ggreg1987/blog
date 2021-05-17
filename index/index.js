@@ -4,6 +4,14 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const connection = require('../database/database');
 
+connection
+    .authenticate()
+    .then(() => {
+        console.log("Conexão com o banco realizada com sucesso!")
+    }).catch((err) => {
+        console.log(`Erro ao conectar-se com o banco: #{err}`)
+    });
+
 app.set('view engine','ejs');
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended:false}))
