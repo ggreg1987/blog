@@ -17,3 +17,23 @@ router.get("/admin/articles",(req,res) => {
 router.get("/admin/articles/new",(req,res) => {
     res.render("admin/articles/new")
 })
+
+router.post("/articles/save",(req,res) => {
+    let title = req.body.title;
+    let body = req.body.body;
+    let category = req.body.caregory
+
+    if(title != null && title != undefined) {
+        Article.create({
+            title : title,
+            body : body,
+            slug : slugify(title),
+            categoryId : category
+        }).then(()=> {
+            res.redirect("/admin/articles")
+        })
+    } else {
+        res.redirect("/admin/articles/new")
+    }
+   
+})
