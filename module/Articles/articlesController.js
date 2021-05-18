@@ -13,3 +13,7 @@ router.get("/admin/articles",(req,res) => {
         })
     })
 })
+
+router.get("/admin/articles/new",(req,res) => {
+    res.render("admin/articles/new")
+})
