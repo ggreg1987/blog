@@ -24,6 +24,7 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(session({secret:"hardSecrety", cookie : {maxAge : 36000000}}))
 app.use("/",userController)
 app.use("/",categoriesController)
+app.use("/",articlesController)
 
 
 app.listen(9090,() => {
