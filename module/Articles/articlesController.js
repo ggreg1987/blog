@@ -73,3 +73,18 @@ router.post("/articles/update", (req,res => {
         res.redirect("/admin/articles")
     })
 }))
+
+router.post("/articles/delete", (req,res) => {
+    let id = req.body.id
+    if(id != undefined && !isNaN(id)) {
+        Article.destroy({
+            where : {id : id}
+        }).then(() => {
+            res.redirect("/admin/articles")
+        }).catch((err) => {
+            res.redirect("/admin/articles")
+        });
+    } else {
+        res.redirect("/admin/articles")
+    }
+})
