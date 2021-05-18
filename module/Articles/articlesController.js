@@ -37,3 +37,20 @@ router.post("/articles/save",(req,res) => {
     }
    
 })
+
+router.post("/admin/articles/edit/:id",(req,res) => {
+    let id = req.params.id;
+
+    if(id != undefined && !isNaN(id)) {
+        Article.findByPk(id).then(articles => {
+            Categories.findAll().then(categories => {
+                res.render("admin/articles/edit", {
+                    articles : articles,
+                    categories : categories
+                })
+            })
+        })
+    } else {
+        res.redirect("/admin/articles/edit")
+    }
+})
