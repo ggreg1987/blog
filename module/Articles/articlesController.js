@@ -88,3 +88,5 @@ router.post("/articles/delete", (req,res) => {
         res.redirect("/admin/articles")
     }
 })
+
+module.exports = router
